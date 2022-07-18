@@ -1,20 +1,111 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>
-        Jberry |  Home
-    </title>
-    <link rel="stylesheet" href="{% static 'index.css' %}">
-</head>
-<body>
-    <h1>
-        Welcome to my page
-    </h1>
-</body>
-</html>
+    
+{% block title %}
+<title>JBerry | Home</title>
+{% endblock title %}
+
+{% block content %}
+<!-- Product Catagories Area Start -->
+<div class="products-catagories-area clearfix">
+    <div class="amado-pro-catagory clearfix">
+
+        <!-- Single Catagory -->
+        <div class="single-products-catagory clearfix">
+            <a href="shop.html">
+                <img src="{% static 'img/bg-img/1.jpg' %}" alt="">
+                <!-- Hover Content -->
+                <div class="hover-content">
+                    <div class="line"></div>
+                    <p>From $180</p>
+                    <h4>Modern Chair</h4>
+                </div>
+            </a>
+        </div>
+
+        <!-- Single Catagory -->
+        <div class="single-products-catagory clearfix">
+            <a href="shop.html">
+                <img src="{% static 'img/bg-img/2.jpg' %}" alt="">
+                <!-- Hover Content -->
+                <div class="hover-content">
+                    <div class="line"></div>
+                    <p>From $180</p>
+                    <h4>Minimalistic Plant Pot</h4>
+                </div>
+            </a>
+        </div>
+
+        <!-- Single Catagory -->
+        <div class="single-products-catagory clearfix">
+            <a href="shop.html">
+                <img src="{% static 'img/bg-img/3.jpg' %}" alt="">
+                <!-- Hover Content -->
+                <div class="hover-content">
+                    <div class="line"></div>
+                    <p>From $180</p>
+                    <h4>Modern Chair</h4>
+                </div>
+            </a>
+        </div>
+
+        <!-- Single Catagory -->
+        <div class="single-products-catagory clearfix">
+            <a href="shop.html">
+                <img src="{% static 'img/bg-img/4.jpg' %}" alt="">
+                <!-- Hover Content -->
+                <div class="hover-content">
+                    <div class="line"></div>
+                    <p>From $180</p>
+                    <h4>Night Stand</h4>
+                </div>
+            </a>
+        </div>
+
+        <!-- Single Catagory -->
+        <div class="single-products-catagory clearfix">
+            <a href="shop.html">
+                <img src="{% static 'img/bg-img/3.jpg' %}" alt="">
+                <!-- Hover Content -->
+                <div class="hover-content">
+                    <div class="line"></div>
+                    <p>From $18</p>
+                    <h4>Plant Pot</h4>
+                </div>
+            </a>
+        </div>
+
+        <!-- Single Catagory -->
+        <div class="single-products-catagory clearfix">
+            <a href="shop.html">
+                <img src="{% static 'img/bg-img/4.jpg' %}" alt="">
+                <!-- Hover Content -->
+                <div class="hover-content">
+                    <div class="line"></div>
+                    <p>From $180</p>
+                    <h4>Night Stand</h4>
+                </div>
+            </a>
+        </div>
+
+        <!-- Single Catagory -->
+        <div class="single-products-catagory clearfix">
+            <a href="shop.html">
+                <img src="{% static 'img/bg-img/1.jpg' %}" alt="">
+                <!-- Hover Content -->
+                <div class="hover-content">
+                    <div class="line"></div>
+                    <p>From $18</p>
+                    <h4>Plant Pot</h4>
+                </div>
+            </a>
+        </div>
+
+
+    </div>
+</div>
+<!-- Product Catagories Area End -->
+{% endblock content %}
+        
+ 

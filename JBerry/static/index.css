@@ -1,4 +1,12 @@
 h1{
-    Color:rgba(10, 213, 228, 0.788)
-    ;
+    color: rgb(8, 75, 30);
 }
+
+form{
+    
+    transform: translateX(50%) translateY(50%);
+}
+
+input{
+    margin: 10px;
+} 
