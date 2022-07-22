@@ -50,7 +50,7 @@
         <div class="mobile-nav">
             <!-- Navbar Brand -->
             <div class="amado-navbar-brand">
-                <a href="index.html"><img style="position: absolute;" src="{% static 'img/core-img/logo.png' %}" alt=""></a>
+                <a href="{% url 'home' %}"><img style="position: absolute;" src="{% static 'img/core-img/logo.png' %}" alt=""></a>
             </div>
             <!-- Navbar Toggler -->
             <div class="amado-navbar-toggler">
@@ -66,20 +66,26 @@
             </div>
             <!-- Logo -->
             <div class="logo">
-                <a href="index.html"><img src="{% static 'img/core-img/logo.png' %}" alt=""></a>
+                <a href="{% url 'home' %}"><img src="{% static 'img/core-img/logo.png' %}" alt=""></a>
             </div>
             <!-- Amado Nav -->
             <nav class="amado-nav">
                 <ul>
-                    <li class="active"><a href="index.html">Home</a></li>
+                    <li class="active"><a href="{% url 'home' %}">Home</a></li>
                     <li><a href="cart.html">Cart</a></li>
                     <li><a href="checkout.html">Checkout</a></li>
-                    <li><a href="checkout.html">Login</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a href="#">{{user.username}}</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                    {% else %} 
+                    <li><a href="{% url 'register' %}">Register</a></li>
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                    {% endif %}
                 </ul>
             </nav>
             <!-- Button Group -->
             <div class="amado-btn-group mt-30 mb-100">
-                <a href="trending.html" class="btn amado-btn mb-15">Trending</a>
+                <a href="{% url 'trending' %}" class="btn amado-btn mb-15">Trending</a>
             </div>
             <!-- Cart Menu -->
             <div class="cart-fav-search mb-100">
@@ -115,7 +121,7 @@
                     <div class="single_widget_area">
                         <!-- Logo -->
                         <div class="footer-logo mr-50">
-                            <a href="index.html"><img src="{% static 'img/core-img/logo.png' %}" alt=""></a>
+                            <a href="{% url 'home' %}"><img src="{% static 'img/core-img/logo.png' %}" alt=""></a>
                         </div>
                         <!-- Copywrite Text -->
                         <p class="copywrite">
@@ -139,7 +145,7 @@
                                 <div class="collapse navbar-collapse" id="footerNavContent">
                                     <ul class="navbar-nav ml-auto">
                                         <li class="nav-item active">
-                                            <a class="nav-link" href="index.html">Home</a>
+                                            <a class="nav-link" href="{% url 'home' %}">Home</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="cart.html">Cart</a>

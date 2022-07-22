@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+<title>JBerry | Login</title>
+<style>
+    
+.register{
+    
+    transform: translateX(30%) translateY(60%);
+}
+
+.register input{
+    margin: 10px;
+}
+ 
+</style>
+{% endblock title %}
+
+{% block content %}
+<!-- Product Catagories Area Start -->
+<div class="products-catagories-area clearfix">
+    <h1> Login  Here</h1>
+    <form action="{% url 'login' %}" method="post" class="register">
+        {% csrf_token %}
+        <input type="text" name="username"  placeholder="Enter Username.." required><br><br>
+        <input type="password" name="password1" placeholder="Password.." required><br><br>
+        <input type="submit" value="login">
+    </form>
+</div>
+<!-- Product Catagories Area End -->
+{% endblock content %}
