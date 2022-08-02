@@ -14,6 +14,7 @@ class Product(models.Model):
     delivery = models.SmallIntegerField(default=7)
     stock = models.BooleanField(default=True)
     image = models.ImageField(upload_to='upload')
+ 
 
     def __str__(self) -> str:
         return f'Product({self.pid} | {self.title})'

@@ -32,8 +32,9 @@
             <div class="row">
                 <div class="col-12">
                     <div class="search-content">
-                        <form action="#" method="get">
-                            <input type="search" name="search" id="search" placeholder="Type your keyword...">
+                        <form action="{% url 'search' %}" method="POST">
+                            {% csrf_token %}
+                            <input type="search" name="keywords" id="search" placeholder="Type your keyword...">
                             <button type="submit"><img src="{% static 'img/core-img/search.png' %}" alt=""></button>
                         </form>
                     </div>
@@ -72,9 +73,10 @@
             <nav class="amado-nav">
                 <ul>
                     <li class="active"><a href="{% url 'home' %}">Home</a></li>
-                    <li><a href="cart.html">Cart</a></li>
+                   
                     <li><a href="checkout.html">Checkout</a></li>
                     {% if user.is_authenticated %}
+                    <li><a href="{%url 'viewCart' user.id %}">Cart</a></li>
                     <li><a href="#">{{user.username}}</a></li>
                     <li><a href="{% url 'logout' %}">Logout</a></li>
                     {% else %} 
