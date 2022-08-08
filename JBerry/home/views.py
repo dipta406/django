@@ -2,9 +2,12 @@ import email
 from django.shortcuts import redirect, render , HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
+from cartApp.models import cartItem
 
 # Create your views here.
 def index(request):
+    if 'user' in request.session.keys() and request.session['user']:
+          return  render(request, 'index.html', context={'CartCount': request.session['CartCount']})
     return  render(request, 'index.html')
 def register(request):
     if request.method == 'POST':
@@ -30,10 +33,14 @@ def Login(request):
         user = authenticate(username = username, password = password)
         if user is not None:
          login(request = request,user = user)
+         request.session['user'] = user.id
+         request.session['CartCount'] = cartItem.objects.filter(uid = user.id, in_cart = True ).count()
          return redirect('home')   
         return render(request, 'login.html')
     return render(request, 'login.html')
 def Logout(request):
+    request.session['user'] = False
+    request.session['CartCount'] = 0
     logout(request=request)
     return redirect ('home')
     

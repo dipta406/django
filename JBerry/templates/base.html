@@ -91,7 +91,11 @@
             </div>
             <!-- Cart Menu -->
             <div class="cart-fav-search mb-100">
+                {% if user.is_authenticated %}
+                <a href="{%url 'viewCart' user.id %}" class="cart-nav"><img src="{% static 'img/core-img/cart.png' %}" alt=""> Cart <span>({{ CartCount}})</span></a>
+                {% else %}
                 <a href="cart.html" class="cart-nav"><img src="{% static 'img/core-img/cart.png' %}" alt=""> Cart <span>(0)</span></a>
+                {% endif  %}
                 <a href="#" class="search-nav"><img src="{% static 'img/core-img/search.png' %}" alt=""> Search</a>
             </div>
             <!-- Social Button -->

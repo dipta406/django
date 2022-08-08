@@ -22,8 +22,10 @@
                             <tr>
                                 <th></th>
                                 <th>Name</th>
-                                <th>Price</th>
                                 <th>Quantity</th>
+                                
+                                <th>Price</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -36,11 +38,13 @@
                                     <h5>{{item.title}}</h5>
                                 </td>
                                 <td class="price">
-                                    <span>{{item.price}}</span>
-                                </td>
-                                <td class="price">
                                     <span>{{item.qty}}</span>
                                 </td>
+                                 
+                                <td class="price">
+                                    <span>{{item.price}}</span>
+                                </td>
+                                
 
                             </tr>{% endfor %}
                             
