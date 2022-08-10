@@ -10,7 +10,7 @@ def trending(request):
     return render(request, 'trending.html', context={'items': items,'categories': categories, 'CartCount': request.session['CartCount']}) 
 def filterByCat(request,category):
    filtered_items = Product.objects.filter(category=category)
-   return render(request, 'trending.html', context={'items': filtered_items ,'categories': {category,'CartCount': request.session['CartCount']}})
+   return render(request, 'trending.html', context={'items': filtered_items ,'categories': category,'CartCount': request.session['CartCount']})
 
 def product_details(request,pid):
     item = Product.objects.get(pid = pid)

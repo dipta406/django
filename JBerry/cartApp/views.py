@@ -23,7 +23,7 @@ def viewCart(request, uid):
         cartItems.append(citems)
         cart_total = cart_total + citems["price"]
     return render(
-        request, "cart.html", context={"items": cartItems, "cart_total": cart_total}
+        request, "cart.html", context={"items": cartItems, "cart_total": cart_total, 'CartCount': request.session['CartCount']}
     )
 
 
@@ -36,4 +36,4 @@ def addToCart(request):
         cartitem = cartItem(pid=pid, uid=uid, qty=qty)
         cartitem.save()
         return redirect('home')
-    return render(request, "cart.html")
+    return render(request, "cart.html", context={'CartCount': request.session['CartCount'],})
